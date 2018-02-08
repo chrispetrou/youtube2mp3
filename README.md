@@ -1,8 +1,8 @@
 ## youtube2mp3
 
-**youtube2mp3.py**: A very simple and minimal youtube to mp3 converter using [youtube-dl](https://github.com/rg3/youtube-dl) (_Of course the script's functionality is already provided by youtube-dl_).
+**youtube2mp3.py**: A very simple and minimal youtube to mp3 converter using [youtube-dl](https://github.com/rg3/youtube-dl).
 
-As input can be either a single youtube-url or a file that contains youtube-urls (*the file does not need to have a specific format*).
+As input can be either a single youtube-url or a file that contains youtube-urls (*the file does not need to have a specific format - youtube urls are detected automatically*).
 
 ```
 $ ./youtube2mp3.py -h

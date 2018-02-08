@@ -29,7 +29,7 @@ def console():
     parser._optionals.title = "{}arguments{}".format(B,RA)
     group.add_argument('-u', "--url", 
                     type=ValidateUrl, 
-                    help='Specify a valid {0}{1}you{2}{0}tube{2} url'.format(B,RD,RA),
+                    help='Specify a {0}{1}you{2}{0}tube{2} url'.format(B,RD,RA),
                     metavar='')
     group.add_argument('-f', "--file", 
                     type=ValidateFile, 

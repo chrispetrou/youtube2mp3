@@ -12,7 +12,7 @@ youtube2mp3: A simple youtube to mp3 converter using youtube-dl.
 
 arguments:
   -h, --help      show this help message and exit
-  -u , --url      Specify a valid youtube url
+  -u , --url      Specify a youtube url
   -f , --file     Specify a file that contains youtube urls
   -p, --playlist  Specify if you want to download playlists
   -o , --output   Specify a custom download directory [optional]

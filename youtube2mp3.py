@@ -93,6 +93,7 @@ def ValidateUrl(url):
         sys.exit(0)
 
 def extracturls(file):
+    """extract urls - avoid duplicates!"""
     with open(file, 'r') as f:
         content = f.read()
 
@@ -102,7 +103,7 @@ def extracturls(file):
     
     # detect youtube urls
     matches = re.finditer(urlptrn, content)
-    return [url.group() for url in matches if 'youtu' in url.group()]
+    return list(set([url.group() for url in matches if 'youtu' in url.group()]))
 
 
 class CustomLogger(object):
@@ -126,7 +127,7 @@ class CustomLogger(object):
 def customhook(d):
     if d['status'] == 'finished':
         print '{0}[{1}Downloaded{2}{0}]{2} {3}'.format(B,G,RA,d['filename'])
-        print '{}Now converting...{}'.format(B,RA)
+        print '{}Converting to mp3...{}'.format(B+Y,RA)
         ret()
 
 def downloadmp3(url, dirctry, plist=True):
@@ -155,13 +156,20 @@ if __name__ == '__main__':
     else:
         dirctry = user.output
     plist = user.playlist
+    if plist:
+        print '\nDownload playlist: {}OFF{}'.format(B+RD,RA)
+    else:
+        print '\nDownload playlist: {}ON{}'.format(B+G,RA)
     try:
-        print ''
         if user.file:
             urls = extracturls(user.file)
-            for i,url in enumerate(urls):
-                print '{0}=-=[ song-{1}{3}{2}{0} ]=-={2}'.format(B,G,RA,i)
-                downloadmp3(url, dirctry ,plist=plist)
+            if urls:
+                print '{1}{0}{2}{3} urls detected!{2}\n'.format(len(urls),B+G,RA,B)
+                for i,url in enumerate(urls):
+                    downloadmp3(url, dirctry ,plist=plist)
+            else:
+                print '\n{}[!] No youtube urls detected! Exiting...{}\n'.format(R,RA)
+                sys.exit(0)
         else:
             downloadmp3(user.url, dirctry ,plist=plist)
     except KeyboardInterrupt:

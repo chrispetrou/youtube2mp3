@@ -24,7 +24,7 @@ G, RD, Y, R, BR  = Fore.GREEN, Fore.RED, Fore.YELLOW, Back.RED, Back.RESET
 
 def console():
     """argument parser"""
-    parser = ArgumentParser(description="{0}{1}you{2}{0}tube{1}2{2}{0}mp3:{2} A simple youtube to mp3 converter using youtube-dl.".format(B,RD,RA),formatter_class=RawTextHelpFormatter)
+    parser = ArgumentParser(description="{0}{1}you{2}{0}tube{1}2{2}{0}mp3:{2} A simple youtube to mp3 converter.".format(B,RD,RA),formatter_class=RawTextHelpFormatter)
     group = parser.add_mutually_exclusive_group(required=True)
     parser._optionals.title = "{}arguments{}".format(B,RA)
     group.add_argument('-u', "--url", 
@@ -36,10 +36,10 @@ def console():
                     help='Specify a file that contains {0}{1}you{2}{0}tube{2} urls'.format(B,RD,RA),
                     metavar='')
     parser.add_argument('-p', "--playlist",
-                    help="Specify if you want to download playlists",
+                    help="Download playlists [{0}Default:{2} {1}False{2}]".format(B,RD,RA),
                     action='store_false')
     parser.add_argument('-o', "--output",
-                    help="Specify a custom download directory [{}optional{}]".format(RD,RA),
+                    help="Specify a download directory [{}optional{}]".format(RD,RA),
                     type=checkDir,
                     required=False,
                     metavar='')

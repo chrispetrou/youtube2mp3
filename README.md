@@ -8,14 +8,14 @@ As input can be either a single youtube-url or a file that contains youtube-urls
 $ ./youtube2mp3.py -h
 usage: youtube2mp3.py [-h] (-u  | -f ) [-p] [-o]
 
-youtube2mp3: A simple youtube to mp3 converter using youtube-dl.
+youtube2mp3: A simple youtube to mp3 converter.
 
 arguments:
   -h, --help      show this help message and exit
   -u , --url      Specify a youtube url
   -f , --file     Specify a file that contains youtube urls
-  -p, --playlist  Specify if you want to download playlists
-  -o , --output   Specify a custom download directory [optional]
+  -p, --playlist  Download playlists [Default: False]
+  -o , --output   Specify a download directory [optional]
 ```
 
 **Requirements:**

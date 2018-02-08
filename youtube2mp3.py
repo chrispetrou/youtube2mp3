@@ -8,11 +8,17 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 import time
-import validators
 from datetime import datetime
 from os.path import isfile, join
 from argparse import ArgumentParser, RawTextHelpFormatter, ArgumentTypeError
-import youtube_dl
+try:
+    import youtube_dl
+except ImportError:
+    print "[x] youtube_dl module is not installed...", exit(0)
+try:
+    import validators
+except ImportError:
+    print "[x] validators module is not installed...", exit(0)
 try:
     from colorama import Fore,Back,Style
 except ImportError:

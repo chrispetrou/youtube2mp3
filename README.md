@@ -24,6 +24,9 @@ arguments:
 *   [colorama](https://pypi.python.org/pypi/colorama)
 *   [validators](https://pypi.python.org/pypi/validators/)
 
+**Note:** To install requirements (except for _ffmpeg_) you can do: 
+`pip install -r requirements.txt --upgrade --user`
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

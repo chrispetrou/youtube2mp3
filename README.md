@@ -1,4 +1,4 @@
-## youtube2mp3
+# youtube2mp3 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/chrispetrou/youtube2mp3/blob/master/LICENSE) [![GitHub license](https://img.shields.io/badge/python-2.7-yellow.svg)](https://www.python.org/)
 
 **youtube2mp3.py**: A very simple and minimal youtube to mp3 converter using [youtube-dl](https://github.com/rg3/youtube-dl).
 

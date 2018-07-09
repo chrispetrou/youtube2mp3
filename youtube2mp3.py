@@ -35,7 +35,7 @@ def console():
                     help='Specify a {0}{1}you{2}{0}tube{2} url'.format(B,RD,RA), metavar='')
     group.add_argument('-f', "--file", type=ValidateFile, 
                     help='Specify a file that contains {0}{1}you{2}{0}tube{2} urls'.format(B,RD,RA), metavar='')
-    parser.add_argument('-t', "--threads", help="Specify how many threads to use[{0}Default:{2} {1}None{2}]".format(B,RD,RA), 
+    parser.add_argument('-t', "--threads", help="Specify how many threads to use [{0}Default:{2} {1}None{2}]".format(B,RD,RA), 
                     default=None, type=int, metavar='')
     parser.add_argument('-p', "--playlist",
                     help="Download playlists [{0}Default:{2} {1}False{2}]".format(B,RD,RA), action='store_false')
